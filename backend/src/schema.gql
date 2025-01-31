@@ -5,3 +5,23 @@
 type Query {
   hello: String!
 }
+
+type Salon {
+  id String!
+  name String!
+  location String!
+}
+
+type Service {
+  id String!
+  salonId String!
+  name String!
+  price Int!
+}
+
+type Appointment {
+  id String!
+  serviceId String!,
+  customerName String!
+  scheduledAt String!
+}
