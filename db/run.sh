@@ -1,13 +1,13 @@
 #!/bin/sh
-set -e
+# set -e
 DIR=$(dirname "$(readlink -f "$0")")
 cd $DIR
 . ./.env
 
 
 # Stop and remove the container if it already exists
-docker stop $DB_CONTAINER_NAME > /dev/null 2>&1
-docker rm $DB_CONTAINER_NAME > /dev/null 2>&1
+docker stop $DB_CONTAINER_NAME > /dev/null # 2>&1
+docker rm $DB_CONTAINER_NAME > /dev/null # 2>&1
 
 # kill any proccess running on DB port
 [ -n "$(lsof -t -i :${DB_PORT})" ] && kill $(lsof -t -i :$DB_PORT)
