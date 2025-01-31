@@ -1,0 +1,7 @@
+CREATE TABLE salon (
+  id BIGINT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(255) NOT NULL,
+  location VARCHAR(255) NOT NULL
+);
+
+CREATE INDEX idx_salon_name ON salon (name);
